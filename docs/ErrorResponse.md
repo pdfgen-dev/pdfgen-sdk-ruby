@@ -1,4 +1,4 @@
-# OpenapiClient::ErrorResponse
+# Pdfgen::ErrorResponse
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'pdfgen'
 
-instance = OpenapiClient::ErrorResponse.new(
+instance = Pdfgen::ErrorResponse.new(
   error_code: null,
   message: null
 )

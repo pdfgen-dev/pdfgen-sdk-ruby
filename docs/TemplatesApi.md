@@ -1,4 +1,4 @@
-# OpenapiClient::TemplatesApi
+# Pdfgen::TemplatesApi
 
 All URIs are relative to *https://api.pdfgen.dev*
 
@@ -25,23 +25,23 @@ Creates a new template for authenticated account and returns the created templat
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'pdfgen'
 # setup authorization
-OpenapiClient.configure do |config|
+Pdfgen.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['ApiKeyAuth'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::TemplatesApi.new
-req = OpenapiClient::CreateTemplateRequest.new({_alias: '_alias_example', html: 'html_example', name: 'name_example'}) # CreateTemplateRequest | 
+api_instance = Pdfgen::TemplatesApi.new
+req = Pdfgen::CreateTemplateRequest.new({_alias: '_alias_example', html: 'html_example', name: 'name_example'}) # CreateTemplateRequest | 
 
 begin
   # Create Template
   result = api_instance.create_template(req)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->create_template: #{e}"
 end
 ```
@@ -59,7 +59,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <TemplateResponse>
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->create_template_with_http_info: #{e}"
 end
 ```
@@ -96,23 +96,23 @@ Deletes the template based on the provided ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'pdfgen'
 # setup authorization
-OpenapiClient.configure do |config|
+Pdfgen.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['ApiKeyAuth'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::TemplatesApi.new
+api_instance = Pdfgen::TemplatesApi.new
 id = 'id_example' # String | Template ID
 
 begin
   # Delete Template
   result = api_instance.delete_template(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->delete_template: #{e}"
 end
 ```
@@ -130,7 +130,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => String
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->delete_template_with_http_info: #{e}"
 end
 ```
@@ -167,16 +167,16 @@ Generates a PDF based on given parameters and the template for provided ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'pdfgen'
 # setup authorization
-OpenapiClient.configure do |config|
+Pdfgen.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['ApiKeyAuth'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::TemplatesApi.new
+api_instance = Pdfgen::TemplatesApi.new
 id = 'id_example' # String | Template ID
 variables = { ... } # Object | Variables used for the template
 
@@ -184,7 +184,7 @@ begin
   # Generate PDF from Template
   result = api_instance.generate_pdf_from_template(id, variables)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->generate_pdf_from_template: #{e}"
 end
 ```
@@ -202,7 +202,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->generate_pdf_from_template_with_http_info: #{e}"
 end
 ```
@@ -240,23 +240,23 @@ Returns a single template based on specified ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'pdfgen'
 # setup authorization
-OpenapiClient.configure do |config|
+Pdfgen.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['ApiKeyAuth'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::TemplatesApi.new
+api_instance = Pdfgen::TemplatesApi.new
 id = 'id_example' # String | Template ID
 
 begin
   # Get Templates
   result = api_instance.get_template(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->get_template: #{e}"
 end
 ```
@@ -274,7 +274,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <TemplateResponse>
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->get_template_with_http_info: #{e}"
 end
 ```
@@ -311,22 +311,22 @@ Returns all available templates
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'pdfgen'
 # setup authorization
-OpenapiClient.configure do |config|
+Pdfgen.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['ApiKeyAuth'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::TemplatesApi.new
+api_instance = Pdfgen::TemplatesApi.new
 
 begin
   # List all Templates
   result = api_instance.list_templates
   p result
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->list_templates: #{e}"
 end
 ```
@@ -344,7 +344,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListTemplatesResponse>
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->list_templates_with_http_info: #{e}"
 end
 ```
@@ -379,16 +379,16 @@ Previews a PDF with given variables
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'pdfgen'
 # setup authorization
-OpenapiClient.configure do |config|
+Pdfgen.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['ApiKeyAuth'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::TemplatesApi.new
+api_instance = Pdfgen::TemplatesApi.new
 id = 'id_example' # String | Template ID or alias
 variables = { ... } # Object | Variables used for the template
 
@@ -396,7 +396,7 @@ begin
   # Previews PDF with given variables
   result = api_instance.preview_template(id, variables)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->preview_template: #{e}"
 end
 ```
@@ -414,7 +414,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->preview_template_with_http_info: #{e}"
 end
 ```
@@ -452,24 +452,24 @@ Updates a template for authenticated account and returns the updated template
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'pdfgen'
 # setup authorization
-OpenapiClient.configure do |config|
+Pdfgen.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['ApiKeyAuth'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::TemplatesApi.new
+api_instance = Pdfgen::TemplatesApi.new
 id = 'id_example' # String | Template ID
-req = OpenapiClient::UpdateTemplateRequest.new # UpdateTemplateRequest | 
+req = Pdfgen::UpdateTemplateRequest.new # UpdateTemplateRequest | 
 
 begin
   # Update Template
   result = api_instance.update_template(id, req)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->update_template: #{e}"
 end
 ```
@@ -487,7 +487,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <TemplateResponse>
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling TemplatesApi->update_template_with_http_info: #{e}"
 end
 ```

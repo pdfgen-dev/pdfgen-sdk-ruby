@@ -1,4 +1,4 @@
-# OpenapiClient::GeneratePDFRequest
+# Pdfgen::GeneratePDFRequest
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'pdfgen'
 
-instance = OpenapiClient::GeneratePDFRequest.new(
+instance = Pdfgen::GeneratePDFRequest.new(
   html: null,
   variables: null
 )

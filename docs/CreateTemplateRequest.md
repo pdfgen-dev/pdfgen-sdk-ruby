@@ -1,4 +1,4 @@
-# OpenapiClient::CreateTemplateRequest
+# Pdfgen::CreateTemplateRequest
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'pdfgen'
 
-instance = OpenapiClient::CreateTemplateRequest.new(
+instance = Pdfgen::CreateTemplateRequest.new(
   _alias: null,
   html: null,
   name: null

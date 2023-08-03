@@ -1,4 +1,4 @@
-# OpenapiClient::PdfApi
+# Pdfgen::PdfApi
 
 All URIs are relative to *https://api.pdfgen.dev*
 
@@ -19,23 +19,23 @@ Generates a PDF based on given HTML and parameters
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'pdfgen'
 # setup authorization
-OpenapiClient.configure do |config|
+Pdfgen.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['ApiKeyAuth'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::PdfApi.new
-req = OpenapiClient::GeneratePDFRequest.new({html: 'html_example'}) # GeneratePDFRequest | HTML and variables to be converted to PDF
+api_instance = Pdfgen::PdfApi.new
+req = Pdfgen::GeneratePDFRequest.new({html: 'html_example'}) # GeneratePDFRequest | HTML and variables to be converted to PDF
 
 begin
   # Generate PDF
   result = api_instance.generate_pdf(req)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling PdfApi->generate_pdf: #{e}"
 end
 ```
@@ -53,7 +53,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling PdfApi->generate_pdf_with_http_info: #{e}"
 end
 ```

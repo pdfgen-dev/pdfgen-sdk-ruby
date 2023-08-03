@@ -1,4 +1,4 @@
-# OpenapiClient::JobsApi
+# Pdfgen::JobsApi
 
 All URIs are relative to *https://api.pdfgen.dev*
 
@@ -20,23 +20,23 @@ Download the file for the specified job
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'pdfgen'
 # setup authorization
-OpenapiClient.configure do |config|
+Pdfgen.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['ApiKeyAuth'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::JobsApi.new
+api_instance = Pdfgen::JobsApi.new
 id = 'id_example' # String | Job ID
 
 begin
   # Download file
   result = api_instance.download_file(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling JobsApi->download_file: #{e}"
 end
 ```
@@ -54,7 +54,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => String
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling JobsApi->download_file_with_http_info: #{e}"
 end
 ```
@@ -91,22 +91,22 @@ Returns all jobs
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'pdfgen'
 # setup authorization
-OpenapiClient.configure do |config|
+Pdfgen.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['ApiKeyAuth'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::JobsApi.new
+api_instance = Pdfgen::JobsApi.new
 
 begin
   # List all Jobs
   result = api_instance.list_jobs
   p result
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling JobsApi->list_jobs: #{e}"
 end
 ```
@@ -124,7 +124,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListJobsResponse>
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Error when calling JobsApi->list_jobs_with_http_info: #{e}"
 end
 ```

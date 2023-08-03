@@ -1,6 +1,6 @@
-# openapi_client
+# pdfgen
 
-OpenapiClient - the Ruby gem for the PDFGen API
+Pdfgen - the Ruby gem for the PDFGen API
 
 The PDFGen API for HTML to PDF generation.
 
@@ -18,28 +18,28 @@ For more information, please visit [https://www.pdfgen.dev](https://www.pdfgen.d
 To build the Ruby code into a gem:
 
 ```shell
-gem build openapi_client.gemspec
+gem build pdfgen.gemspec
 ```
 
 Then either install the gem locally:
 
 ```shell
-gem install ./openapi_client-1.0.0.gem
+gem install ./pdfgen-1.0.0.gem
 ```
 
-(for development, run `gem install --dev ./openapi_client-1.0.0.gem` to install the development dependencies)
+(for development, run `gem install --dev ./pdfgen-1.0.0.gem` to install the development dependencies)
 
 or publish the gem to a gem hosting service, e.g. [RubyGems](https://rubygems.org/).
 
 Finally add this to the Gemfile:
 
-    gem 'openapi_client', '~> 1.0.0'
+    gem 'pdfgen', '~> 1.0.0'
 
 ### Install from Git
 
 If the Ruby gem is hosted at a git repository: https://github.com/pdfgen-dev/pdfgen-sdk-php, then add the following in the Gemfile:
 
-    gem 'openapi_client', :git => 'https://github.com/pdfgen-dev/pdfgen-sdk-php.git'
+    gem 'pdfgen', :git => 'https://github.com/pdfgen-dev/pdfgen-sdk-php.git'
 
 ### Include the Ruby code directly
 
@@ -55,24 +55,24 @@ Please follow the [installation](#installation) procedure and then run the follo
 
 ```ruby
 # Load the gem
-require 'openapi_client'
+require 'pdfgen'
 
 # Setup authorization
-OpenapiClient.configure do |config|
+Pdfgen.configure do |config|
   # Configure API key authorization: ApiKeyAuth
   config.api_key['ApiKeyAuth'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 end
 
-api_instance = OpenapiClient::JobsApi.new
+api_instance = Pdfgen::JobsApi.new
 id = 'id_example' # String | Job ID
 
 begin
   #Download file
   result = api_instance.download_file(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Pdfgen::ApiError => e
   puts "Exception when calling JobsApi->download_file: #{e}"
 end
 
@@ -84,28 +84,28 @@ All URIs are relative to *https://api.pdfgen.dev*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OpenapiClient::JobsApi* | [**download_file**](docs/JobsApi.md#download_file) | **GET** /v1/jobs/{id}/download | Download file
-*OpenapiClient::JobsApi* | [**list_jobs**](docs/JobsApi.md#list_jobs) | **GET** /v1/jobs | List all Jobs
-*OpenapiClient::PdfApi* | [**generate_pdf**](docs/PdfApi.md#generate_pdf) | **POST** /v1/pdf | Generate PDF
-*OpenapiClient::TemplatesApi* | [**create_template**](docs/TemplatesApi.md#create_template) | **POST** /v1/templates | Create Template
-*OpenapiClient::TemplatesApi* | [**delete_template**](docs/TemplatesApi.md#delete_template) | **DELETE** /v1/templates/{id} | Delete Template
-*OpenapiClient::TemplatesApi* | [**generate_pdf_from_template**](docs/TemplatesApi.md#generate_pdf_from_template) | **POST** /v1/templates/{id}/pdf | Generate PDF from Template
-*OpenapiClient::TemplatesApi* | [**get_template**](docs/TemplatesApi.md#get_template) | **GET** /v1/templates/{id} | Get Templates
-*OpenapiClient::TemplatesApi* | [**list_templates**](docs/TemplatesApi.md#list_templates) | **GET** /v1/templates | List all Templates
-*OpenapiClient::TemplatesApi* | [**preview_template**](docs/TemplatesApi.md#preview_template) | **POST** /v1/templates/{id}/preview | Previews PDF with given variables
-*OpenapiClient::TemplatesApi* | [**update_template**](docs/TemplatesApi.md#update_template) | **PUT** /v1/templates/{id} | Update Template
+*Pdfgen::JobsApi* | [**download_file**](docs/JobsApi.md#download_file) | **GET** /v1/jobs/{id}/download | Download file
+*Pdfgen::JobsApi* | [**list_jobs**](docs/JobsApi.md#list_jobs) | **GET** /v1/jobs | List all Jobs
+*Pdfgen::PdfApi* | [**generate_pdf**](docs/PdfApi.md#generate_pdf) | **POST** /v1/pdf | Generate PDF
+*Pdfgen::TemplatesApi* | [**create_template**](docs/TemplatesApi.md#create_template) | **POST** /v1/templates | Create Template
+*Pdfgen::TemplatesApi* | [**delete_template**](docs/TemplatesApi.md#delete_template) | **DELETE** /v1/templates/{id} | Delete Template
+*Pdfgen::TemplatesApi* | [**generate_pdf_from_template**](docs/TemplatesApi.md#generate_pdf_from_template) | **POST** /v1/templates/{id}/pdf | Generate PDF from Template
+*Pdfgen::TemplatesApi* | [**get_template**](docs/TemplatesApi.md#get_template) | **GET** /v1/templates/{id} | Get Templates
+*Pdfgen::TemplatesApi* | [**list_templates**](docs/TemplatesApi.md#list_templates) | **GET** /v1/templates | List all Templates
+*Pdfgen::TemplatesApi* | [**preview_template**](docs/TemplatesApi.md#preview_template) | **POST** /v1/templates/{id}/preview | Previews PDF with given variables
+*Pdfgen::TemplatesApi* | [**update_template**](docs/TemplatesApi.md#update_template) | **PUT** /v1/templates/{id} | Update Template
 
 
 ## Documentation for Models
 
- - [OpenapiClient::CreateTemplateRequest](docs/CreateTemplateRequest.md)
- - [OpenapiClient::ErrorResponse](docs/ErrorResponse.md)
- - [OpenapiClient::GeneratePDFRequest](docs/GeneratePDFRequest.md)
- - [OpenapiClient::JobResponse](docs/JobResponse.md)
- - [OpenapiClient::ListJobsResponse](docs/ListJobsResponse.md)
- - [OpenapiClient::ListTemplatesResponse](docs/ListTemplatesResponse.md)
- - [OpenapiClient::TemplateResponse](docs/TemplateResponse.md)
- - [OpenapiClient::UpdateTemplateRequest](docs/UpdateTemplateRequest.md)
+ - [Pdfgen::CreateTemplateRequest](docs/CreateTemplateRequest.md)
+ - [Pdfgen::ErrorResponse](docs/ErrorResponse.md)
+ - [Pdfgen::GeneratePDFRequest](docs/GeneratePDFRequest.md)
+ - [Pdfgen::JobResponse](docs/JobResponse.md)
+ - [Pdfgen::ListJobsResponse](docs/ListJobsResponse.md)
+ - [Pdfgen::ListTemplatesResponse](docs/ListTemplatesResponse.md)
+ - [Pdfgen::TemplateResponse](docs/TemplateResponse.md)
+ - [Pdfgen::UpdateTemplateRequest](docs/UpdateTemplateRequest.md)
 
 
 ## Documentation for Authorization

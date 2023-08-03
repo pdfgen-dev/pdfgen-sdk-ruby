@@ -1,4 +1,4 @@
-# OpenapiClient::ListTemplatesResponse
+# Pdfgen::ListTemplatesResponse
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'pdfgen'
 
-instance = OpenapiClient::ListTemplatesResponse.new(
+instance = Pdfgen::ListTemplatesResponse.new(
   templates: null
 )
 ```

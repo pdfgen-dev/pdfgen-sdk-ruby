@@ -1,4 +1,4 @@
-# OpenapiClient::JobResponse
+# Pdfgen::JobResponse
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'pdfgen'
 
-instance = OpenapiClient::JobResponse.new(
+instance = Pdfgen::JobResponse.new(
   created_at: null,
   duration: null,
   file_name: null,
